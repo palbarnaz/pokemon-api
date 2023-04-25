@@ -1,15 +1,15 @@
 import React from 'react';
-
-import AppRoutes from './Routes/AppRoutes';
+import './App.css';
+import { ThemeProvider } from '@mui/material';
+import defaultTheme from './config/theme/default';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <AppRoutes />
-            </header>
-        </div>
-    );
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <AppRoutes />
+    </ThemeProvider>
+  );
 }
 
 export default App;

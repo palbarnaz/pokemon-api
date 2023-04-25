@@ -1,15 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home';
+import Detail from '../pages/Detail';
+import DefaultLayout from '../config/layout/DefaultLayout';
 
-// eslint-disable-next-line react/function-component-definition
 const AppRoutes: React.FC = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<h1>Home</h1>} />
-            </Routes>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DefaultLayout component={Home} />} />
+        <Route path="/detail" element={<DefaultLayout component={Detail} />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default AppRoutes;
